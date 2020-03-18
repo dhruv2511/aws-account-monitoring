@@ -6,7 +6,7 @@ data "aws_caller_identity" "current" {}
 
 # First, we need a role to play with Lambda
 resource "aws_iam_role" "iam_role_for_lambda" {
-  name = "iam_role_for_lambda"
+  name = "account_status_lambda_role"
 
   assume_role_policy = <<EOF
 {
@@ -31,7 +31,7 @@ EOF
 
 # See also the following AWS managed policy: AWSLambdaBasicExecutionRole
 resource "aws_iam_policy" "lambda_logging" {
-  name        = "lambda_logging"
+  name        = "account_status_lambda_logging"
   path        = "/"
   description = "IAM policy for logging from a lambda"
 
