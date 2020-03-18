@@ -83,7 +83,7 @@ resource "aws_api_gateway_account" "portal" {
 }
 
 resource "aws_iam_role" "cloudwatch" {
-  name = "api_gateway_cloudwatch_global"
+  name = "api_gateway_cloudwatch_account"
 
   assume_role_policy = <<EOF
 {
