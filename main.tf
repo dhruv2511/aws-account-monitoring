@@ -19,12 +19,6 @@ resource "aws_iam_role" "iam_role_for_lambda" {
         "Service": "lambda.amazonaws.com"
       },
       "Action": "sts:AssumeRole"
-    },
-    {
-      "Sid": "",
-      "Effect": "Allow",
-      "Action": "organizations:ListCreateAccountStatus",
-      "Resource": "*"
     }
   ]
 }
@@ -53,6 +47,11 @@ resource "aws_iam_policy" "lambda_logging" {
       ],
       "Resource": "arn:aws:logs:*:*:*",
       "Effect": "Allow"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "organizations:ListCreateAccountStatus",
+      "Resource": "*"
     }
   ]
 }
