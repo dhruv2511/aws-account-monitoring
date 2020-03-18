@@ -130,7 +130,7 @@ EOF
 
 resource "aws_api_gateway_method_settings" "account_method_settings" {
   rest_api_id = aws_api_gateway_rest_api.account_status_api.id
-  stage_name  = aws_api_gateway_deployment.hello_api_deployment.stage_name
+  stage_name  = aws_api_gateway_deployment.account_api_deployment.stage_name
   method_path = "${aws_api_gateway_resource.account_status.path_part}/${module.account_status.http_method}"
 
   settings {
