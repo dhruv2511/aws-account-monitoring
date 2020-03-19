@@ -84,7 +84,7 @@ resource "aws_lambda_function" "status_tfe_lambda" {
 ###############################################################################
 # Logging and Monitoring the API
 ###############################################################################
-resource "aws_api_gateway_account" "portal" {
+resource "aws_api_gateway_account" "accounts_status_api" {
   cloudwatch_role_arn = aws_iam_role.cloudwatch.arn
 }
 
@@ -189,7 +189,7 @@ resource "aws_api_gateway_api_key" "account_status_api_key" {
   name = var.api_key_name
 }
 
-resource "aws_api_gateway_usage_plan_key" "hello_api_plan_key" {
+resource "aws_api_gateway_usage_plan_key" "account_status_api_plan_key" {
   key_id        = aws_api_gateway_api_key.account_status_api_key.id
   key_type      = "API_KEY"
   usage_plan_id = aws_api_gateway_usage_plan.account_status_usage_plan.id
